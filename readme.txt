@@ -1,4 +1,4 @@
-=== Gist Shortcode ===
+=== Github Gist Shortcode ===
 Contributors: claudiosanches
 Tags: github, gist, code, syntax, syntax highlighter
 Requires at least: 3.0
@@ -30,10 +30,10 @@ Add a specific file in a gist:
 
 == License ==
 
-This file is part of Gist Shortcode.
-Gist Shortcode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published
+This file is part of Github Gist Shortcode.
+Github Gist Shortcode is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published
 by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-Gist Shortcode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+Github Gist Shortcode is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with Author Bio Box. If not, see <http://www.gnu.org/licenses/>.
 
