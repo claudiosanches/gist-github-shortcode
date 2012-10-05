@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name: Gist Github Shortcode
+ * Plugin Name: Gist Shortcode
  * Plugin URI: http://claudiosmweb.com/
- * Description: Adds Gists in your posts via shortcode.
+ * Description: Adds Github Gists in your posts via shortcode.
  * Version: 1.0
  * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
