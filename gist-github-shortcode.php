@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Github Gist Shortcode
+ * Plugin Name: Gist Github Shortcode
  * Plugin URI: http://claudiosmweb.com/
  * Description: Adds Gists in your posts via shortcode.
  * Version: 1.0
