@@ -16,11 +16,11 @@ This plugin adds Github Gists in your posts via shortcode.
 **Examples**
 Add a full gist:
 
-    [gist id="Gist ID"]
+    [gist id="3837669"]
 
 Add a specific file in a gist:
 
-    [gist id="Gist ID"]
+    [gist id="3837669" file="index.php"]
 
 
 == Installation ==
