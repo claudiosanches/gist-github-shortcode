@@ -37,17 +37,17 @@ Add a specific file in a gist:
 
 ## Screenshots ##
 
-### 1. screenshot-1.png ###
-![1. screenshot-1.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-1.png)
+### 1. Shortcode button in TinyMCE. ###
+![1. Shortcode button in TinyMCE.](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-1.png)
 
-### 2. screenshot-2.png ###
-![2. screenshot-2.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-2.png)
+### 2. Shorcode dialog. ###
+![2. Shorcode dialog.](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-2.png)
 
-### 3. screenshot-3.png ###
-![3. screenshot-3.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-3.png)
+### 3. Shorcode example. ###
+![3. Shorcode example.](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-3.png)
 
-### 4. screenshot-4.png ###
-![4. screenshot-4.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-4.png)
+### 4. Plugin in action. ###
+![4. Plugin in action.](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-4.png)
 
 
 ## Changelog ##

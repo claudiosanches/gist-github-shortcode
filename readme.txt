@@ -37,10 +37,10 @@ Add a specific file in a gist:
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
-4. screenshot-4.png
+1. Shortcode button in TinyMCE.
+2. Shorcode dialog.
+3. Shorcode example.
+4. Plugin in action.
 
 == Changelog ==
 
