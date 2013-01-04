@@ -1,4 +1,4 @@
-=== Gist Shortcode ===
+=== Gist GitHub Shortcode ===
 Contributors: claudiosanches
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBVENSVSKY7JC
 Tags: github, gist, code, syntax, syntax highlighter

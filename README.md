@@ -1,4 +1,4 @@
-# Gist Shortcode #
+# Gist GitHub Shortcode #
 **Contributors:** claudiosanches  
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBVENSVSKY7JC  
 **Tags:** github, gist, code, syntax, syntax highlighter  
@@ -38,16 +38,16 @@ Add a specific file in a gist:
 ## Screenshots ##
 
 ### 1. screenshot-1.png ###
-![1. screenshot-1.png](http://s.wordpress.org/extend/plugins/gist-shortcode/screenshot-1.png)
+![1. screenshot-1.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-1.png)
 
 ### 2. screenshot-2.png ###
-![2. screenshot-2.png](http://s.wordpress.org/extend/plugins/gist-shortcode/screenshot-2.png)
+![2. screenshot-2.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-2.png)
 
 ### 3. screenshot-3.png ###
-![3. screenshot-3.png](http://s.wordpress.org/extend/plugins/gist-shortcode/screenshot-3.png)
+![3. screenshot-3.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-3.png)
 
 ### 4. screenshot-4.png ###
-![4. screenshot-4.png](http://s.wordpress.org/extend/plugins/gist-shortcode/screenshot-4.png)
+![4. screenshot-4.png](http://s.wordpress.org/extend/plugins/gist-github-shortcode/screenshot-4.png)
 
 
 ## Changelog ##
