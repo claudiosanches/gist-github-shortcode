@@ -3,8 +3,8 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBVENSVSKY7JC  
 **Tags:** github, gist, code, syntax, syntax highlighter  
 **Requires at least:** 3.0  
-**Tested up to:** 3.5  
-**Stable tag:** 1.1  
+**Tested up to:** 3.5.1  
+**Stable tag:** 1.2.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -52,7 +52,12 @@ Add a specific file in a gist:
 
 ## Changelog ##
 
-### 1.1 04/01/2013 ###
+### 1.2.0 - 19/05/2013 ###
+
+* Improved the shortcode modal dialog.
+* Add pt_BR translation.
+
+### 1.1 - 04/01/2013 ###
 
 * Source code reformulation.
 

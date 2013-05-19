@@ -3,10 +3,12 @@
  * Plugin Name: Gist GitHub Shortcode
  * Plugin URI: https://github.com/claudiosmweb/gist-github-shortcode
  * Description: Adds Github Gists in your posts via shortcode.
- * Version: 1.1
+ * Version: 1.2.0
  * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
  * License: GPLv2 or later
+ * Text Domain: gistgs
+ * Domain Path: /languages/
  */
 
 class Gist_Github_Shortcode {
@@ -16,14 +18,26 @@ class Gist_Github_Shortcode {
      */
     public function __construct() {
 
+        // Load the text domain.
+        add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ), 0 );
+
         // Register the shortcode.
         add_shortcode( 'gist', array( &$this, 'shortcode' ) );
 
         // Init the buttons.
         add_action( 'init', array( &$this, 'buttons_init' ) );
 
-        // Register the ajax request.
+        // Register the modal dialog ajax request.
         add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
+    }
+
+    /**
+     * Load Plugin textdomain.
+     *
+     * @return void.
+     */
+    public function load_textdomain() {
+        load_plugin_textdomain( 'gistgs', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
 
     /**

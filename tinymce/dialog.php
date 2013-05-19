@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<title>Add Gist</title>
+<title><?php _e( 'Add Gist', 'gistgs' ); ?></title>
 <script src="<?php echo includes_url( 'js/jquery/jquery.js' ); ?>" type="text/javascript"></script>
 <script src="<?php echo includes_url( 'js/tinymce/tiny_mce_popup.js' ); ?>" type="text/javascript"></script>
 <script>
@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
         if (required_id.val() == '') {
             e.preventDefault();
             required_id.addClass('invalid');
-            required_id.after('<label class="invalid" style="display: block;">Required Field!</label>');
+            required_id.after('<label class="invalid" style="display: block;"><?php _e( "Required Field!", "gistgs" ); ?></label>');
         } else {
             Gist.insert(Gist.e);
         }
@@ -58,15 +58,15 @@ jQuery(document).ready(function($) {
 <body>
     <form id="gist-form" action="#">
         <p>
-            <label for="gist-id">ID:</label><br/>
+            <label for="gist-id"><?php _e( 'ID', 'gistgs' ); ?>:</label><br/>
             <input id="gist-id" type="text" value="" />
         </p>
         <p>
-            <label for="gist-file">File:</label><br/>
+            <label for="gist-file"><?php _e( 'File', 'gistgs' ); ?>:</label><br/>
             <input id="gist-file" type="text" value="" />
         </p>
         <p>
-            <input type="submit" id="insert" value="Add Gist" />
+            <input type="submit" id="insert" value="<?php _e( 'Insert', 'gistgs' ); ?>" />
         </p>
     </form>
 </body>
