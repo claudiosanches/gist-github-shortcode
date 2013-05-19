@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Gist GitHub Shortcode
- * Plugin URI: http://claudiosmweb.com/plugins/gist-shortcode-wordpress-plugin/
+ * Plugin URI: https://github.com/claudiosmweb/gist-github-shortcode
  * Description: Adds Github Gists in your posts via shortcode.
  * Version: 1.1
  * Author: Claudio Sanches
@@ -19,8 +19,11 @@ class Gist_Github_Shortcode {
         // Register the shortcode.
         add_shortcode( 'gist', array( &$this, 'shortcode' ) );
 
-        // Actions.
+        // Init the buttons.
         add_action( 'init', array( &$this, 'buttons_init' ) );
+
+        // Register the ajax request.
+        add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
     }
 
     /**
@@ -28,6 +31,10 @@ class Gist_Github_Shortcode {
      *
      * Usage:
      * [gist id="Gist ID" file="Gist File (optional)"]
+     *
+     * @param  array  $atts Shortcodes attributes (id and file).
+     *
+     * @return string       Gist code.
      */
     function shortcode( $atts ) {
         extract( shortcode_atts( array(
@@ -73,6 +80,20 @@ class Gist_Github_Shortcode {
             add_filter( 'mce_buttons', array( &$this, 'register_buttons' ) );
         }
     }
+
+    /**
+     * Displays the shortcode modal dialog.
+     *
+     * @return string  Modal Dialog HTML.
+     */
+    function dialog() {
+        @ob_clean();
+
+        include plugin_dir_path( __FILE__ ) . 'tinymce/dialog.php';
+
+        die();
+    }
+
 } // close Gist_Github_Shortcode class.
 
 $gist_github_shortcode = new Gist_Github_Shortcode;

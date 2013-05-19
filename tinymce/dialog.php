@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-<meta charset="UTF-8" />
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
 <title>Add Gist</title>
-<script src="../../../../wp-includes/js/jquery/jquery.js" type="text/javascript"></script>
-<script src="../../../../wp-includes/js/tinymce/tiny_mce_popup.js" type="text/javascript"></script>
+<script src="<?php echo includes_url( 'js/jquery/jquery.js' ); ?>" type="text/javascript"></script>
+<script src="<?php echo includes_url( 'js/tinymce/tiny_mce_popup.js' ); ?>" type="text/javascript"></script>
 <script>
 jQuery(document).ready(function($) {
 
