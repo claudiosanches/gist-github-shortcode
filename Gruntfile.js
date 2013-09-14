@@ -23,17 +23,22 @@ module.exports = function(grunt) {
 
         // rsync commands used to take the files to svn repository
         rsync: {
+            options: {
+                args: ["--verbose"],
+                exclude: "<%= svn_settings.exclude %>",
+                recursive: true
+            },
             tag: {
-                src: "./",
-                dest: "<%= svn_settings.tag %>",
-                recursive: true,
-                exclude: "<%= svn_settings.exclude %>"
+                options: {
+                    src: "./",
+                    dest: "<%= svn_settings.tag %>"
+                }
             },
             trunk: {
+                options: {
                 src: "./",
-                dest: "<%= svn_settings.trunk %>",
-                recursive: true,
-                exclude: "<%= svn_settings.exclude %>"
+                dest: "<%= svn_settings.trunk %>"
+                }
             }
         },
 
@@ -59,35 +64,18 @@ module.exports = function(grunt) {
                     }
                 }
             }
-        },
-
-        // creates a zip of the plugin
-        zipdir: {
-            "gist-github-shortcode": {
-                src: ["./"],
-                dest: "./<%= pkg.name %>.zip",
-                exclude: "<%= svn_settings.exclude %>"
-            }
         }
-
     });
 
     // load tasks
     grunt.loadNpmTasks("grunt-rsync");
     grunt.loadNpmTasks("grunt-shell");
-    grunt.loadNpmTasks("grunt-wx-zipdir");
 
     // deploy task
-    grunt.registerTask("deploy", [
+    grunt.registerTask("default", [
         "rsync:tag",
         "rsync:trunk",
         "shell:svn_add",
         "shell:svn_commit"
-    ]);
-
-    // zip task
-    grunt.registerTask("zip", [
-        "default",
-        "zipdir"
     ]);
 };
