@@ -1,43 +1,44 @@
-module.exports = function(grunt) {
-"use strict";
+/* jshint node:true */
+module.exports = function( grunt ) {
+	'use strict';
 
 	grunt.initConfig({
 
 		// gets the package vars
-		pkg: grunt.file.readJSON("package.json"),
+		pkg: grunt.file.readJSON( 'package.json' ),
 		svn_settings: {
-			path: "../../../../wp_plugins/<%= pkg.name %>",
-			tag: "<%= svn_settings.path %>/tags/<%= pkg.version %>",
-			trunk: "<%= svn_settings.path %>/trunk",
+			path: '../../../../wp_plugins/<%= pkg.name %>',
+			tag: '<%= svn_settings.path %>/tags/<%= pkg.version %>',
+			trunk: '<%= svn_settings.path %>/trunk',
 			exclude: [
-				".editorconfig",
-				".git/",
-				".gitignore",
-				"node_modules/",
-				"Gruntfile.js",
-				"README.md",
-				"package.json",
-				"*.zip"
+				'.editorconfig',
+				'.git/',
+				'.gitignore',
+				'node_modules/',
+				'Gruntfile.js',
+				'README.md',
+				'package.json',
+				'*.zip'
 			]
 		},
 
 		// rsync commands used to take the files to svn repository
 		rsync: {
 			options: {
-				args: ["--verbose"],
-				exclude: "<%= svn_settings.exclude %>",
+				args: ['--verbose'],
+				exclude: '<%= svn_settings.exclude %>',
 				recursive: true
 			},
 			tag: {
 				options: {
-					src: "./",
-					dest: "<%= svn_settings.tag %>"
+					src: './',
+					dest: '<%= svn_settings.tag %>'
 				}
 			},
 			trunk: {
 				options: {
-				src: "./",
-				dest: "<%= svn_settings.trunk %>"
+				src: './',
+				dest: '<%= svn_settings.trunk %>'
 				}
 			}
 		},
@@ -50,17 +51,17 @@ module.exports = function(grunt) {
 					stdout: true,
 					stderr: true,
 					execOptions: {
-						cwd: "<%= svn_settings.path %>"
+						cwd: '<%= svn_settings.path %>'
 					}
 				}
 			},
 			svn_commit: {
-				command: "svn commit -m 'updated the plugin version to <%= pkg.version %>'",
+				command: 'svn commit -m "updated the plugin version to <%= pkg.version %>"',
 				options: {
 					stdout: true,
 					stderr: true,
 					execOptions: {
-						cwd: "<%= svn_settings.path %>"
+						cwd: '<%= svn_settings.path %>'
 					}
 				}
 			}
@@ -68,14 +69,14 @@ module.exports = function(grunt) {
 	});
 
 	// load tasks
-	grunt.loadNpmTasks("grunt-rsync");
-	grunt.loadNpmTasks("grunt-shell");
+	grunt.loadNpmTasks( 'grunt-rsync' );
+	grunt.loadNpmTasks( 'grunt-shell' );
 
 	// deploy task
-	grunt.registerTask("default", [
-		"rsync:tag",
-		"rsync:trunk",
-		"shell:svn_add",
-		"shell:svn_commit"
-	]);
+	grunt.registerTask( 'default', [
+		'rsync:tag',
+		'rsync:trunk',
+		'shell:svn_add',
+		'shell:svn_commit'
+	] );
 };
