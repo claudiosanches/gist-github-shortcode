@@ -9,66 +9,66 @@
 <script>
 jQuery(document).ready(function($) {
 
-    var Gist = {
-        e: '',
-        init: function(e) {
-            Gist.e = e;
-            tinyMCEPopup.resizeToInnerSize();
-        },
-        insert: function createGalleryShortcode(e) {
+	var Gist = {
+		e: '',
+		init: function(e) {
+			Gist.e = e;
+			tinyMCEPopup.resizeToInnerSize();
+		},
+		insert: function createGalleryShortcode(e) {
 
-            var GistID = $('#gist-id').val();
-            var GistFile = $('#gist-file').val();
+			var GistID = $('#gist-id').val();
+			var GistFile = $('#gist-file').val();
 
-            var output = '[gist';
+			var output = '[gist';
 
-            if (GistID) {
-                output += ' id="' + GistID + '"';
-            }
+			if (GistID) {
+				output += ' id="' + GistID + '"';
+			}
 
-            if (GistFile) {
-                output += ' file="' + GistFile + '"';
-            }
+			if (GistFile) {
+				output += ' file="' + GistFile + '"';
+			}
 
-            output += ']';
+			output += ']';
 
-            tinyMCEPopup.execCommand('mceReplaceContent', false, output);
+			tinyMCEPopup.execCommand('mceReplaceContent', false, output);
 
-            tinyMCEPopup.close();
-        }
-    }
-    tinyMCEPopup.onInit.add(Gist.init, Gist);
+			tinyMCEPopup.close();
+		}
+	}
+	tinyMCEPopup.onInit.add(Gist.init, Gist);
 
-    $('#gist-form').on('submit', function(e) {
-        var required_id = $('#gist-id');
-        required_id.removeClass('invalid');
-        $('label.invalid').remove();
+	$('#gist-form').on('submit', function(e) {
+		var required_id = $('#gist-id');
+		required_id.removeClass('invalid');
+		$('label.invalid').remove();
 
-        if (required_id.val() == '') {
-            e.preventDefault();
-            required_id.addClass('invalid');
-            required_id.after('<label class="invalid" style="display: block;"><?php _e( "Required Field!", "gistgs" ); ?></label>');
-        } else {
-            Gist.insert(Gist.e);
-        }
-    });
+		if (required_id.val() == '') {
+			e.preventDefault();
+			required_id.addClass('invalid');
+			required_id.after('<label class="invalid" style="display: block;"><?php _e( "Required Field!", "gistgs" ); ?></label>');
+		} else {
+			Gist.insert(Gist.e);
+		}
+	});
 
 });
 </script>
 </head>
 <body>
-    <form id="gist-form" action="#">
-        <p>
-            <label for="gist-id"><?php _e( 'ID', 'gistgs' ); ?>:</label><br/>
-            <input id="gist-id" type="text" value="" />
-        </p>
-        <p>
-            <label for="gist-file"><?php _e( 'File', 'gistgs' ); ?>:</label><br/>
-            <input id="gist-file" type="text" value="" />
-        </p>
-        <p>
-            <input type="submit" id="insert" value="<?php _e( 'Insert', 'gistgs' ); ?>" />
-        </p>
-    </form>
+	<form id="gist-form" action="#">
+		<p>
+			<label for="gist-id"><?php _e( 'ID', 'gistgs' ); ?>:</label><br/>
+			<input id="gist-id" type="text" value="" />
+		</p>
+		<p>
+			<label for="gist-file"><?php _e( 'File', 'gistgs' ); ?>:</label><br/>
+			<input id="gist-file" type="text" value="" />
+		</p>
+		<p>
+			<input type="submit" id="insert" value="<?php _e( 'Insert', 'gistgs' ); ?>" />
+		</p>
+	</form>
 </body>
 </html>

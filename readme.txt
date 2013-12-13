@@ -2,9 +2,9 @@
 Contributors: claudiosanches
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RBVENSVSKY7JC
 Tags: github, gist, code, syntax, syntax highlighter
-Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.2.0
+Requires at least: 3.8
+Tested up to: 3.8
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,11 +18,11 @@ This plugin adds Github Gists in your posts via shortcode.
 
 Add a full gist:
 
-    [gist id="3837669"]
+	[gist id="3837669"]
 
 Add a specific file in a gist:
 
-    [gist id="3837669" file="index.php"]
+	[gist id="3837669" file="index.php"]
 
 == Installation ==
 
@@ -44,16 +44,21 @@ Add a specific file in a gist:
 
 == Changelog ==
 
+= 1.3.0 - 13/12/2013 =
+
+* Fixed code standards.
+* Added support to WordPress 3.8.
+
 = 1.2.0 - 19/05/2013 =
 
 * Improved the shortcode modal dialog.
 * Add pt_BR translation.
 
-= 1.1 - 04/01/2013 =
+= 1.1.0 - 04/01/2013 =
 
 * Source code reformulation.
 
-= 1.0 =
+= 1.0.0 =
 
 * Initial plugin release.
 
