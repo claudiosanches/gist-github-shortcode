@@ -5,7 +5,7 @@
 				ed.windowManager.open({
 					file: ajaxurl + '?action=github_gist_shortcode',
 					width: 150 + parseInt(ed.getLang('gist.delta_width', 0)),
-					height: 150 + parseInt(ed.getLang('gist.delta_height', 0)),
+					height: 155 + parseInt(ed.getLang('gist.delta_height', 0)),
 					inline: 1
 				}, {
 					plugin_url: url
