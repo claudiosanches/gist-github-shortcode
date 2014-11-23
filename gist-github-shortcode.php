@@ -11,12 +11,32 @@
  * Domain Path: /languages/
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( ! class_exists( 'Gist_Github_Shortcode' ) ) :
+
 class Gist_Github_Shortcode {
+
+	/**
+	 * Plugin version.
+	 *
+	 * @var string
+	 */
+	const VERSION = '1.0.0';
+
+	/**
+	 * Instance of this class.
+	 *
+	 * @var object
+	 */
+	protected static $instance = null;
 
 	/**
 	 * Class construct.
 	 */
-	public function __construct() {
+	private function __construct() {
 
 		// Load the text domain.
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 0 );
@@ -29,6 +49,20 @@ class Gist_Github_Shortcode {
 
 		// Register the modal dialog ajax request.
 		add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @return object A single instance of this class.
+	 */
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
 	}
 
 	/**
@@ -108,6 +142,8 @@ class Gist_Github_Shortcode {
 		die();
 	}
 
-} // close Gist_Github_Shortcode class.
+}
 
-new Gist_Github_Shortcode;
+add_action( 'plugins_loaded', array( 'Gist_Github_Shortcode', 'get_instance' ), 0 );
+
+endif;
