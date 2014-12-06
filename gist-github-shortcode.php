@@ -7,7 +7,7 @@
  * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
  * License: GPLv2 or later
- * Text Domain: gistgs
+ * Text Domain: gist-github-shortcode
  * Domain Path: /languages/
  */
 
@@ -37,9 +37,8 @@ class Gist_Github_Shortcode {
 	 * Class construct.
 	 */
 	private function __construct() {
-
 		// Load the text domain.
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 0 );
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ), 0 );
 
 		// Register the shortcode.
 		add_shortcode( 'gist', array( $this, 'shortcode' ) );
@@ -66,12 +65,15 @@ class Gist_Github_Shortcode {
 	}
 
 	/**
-	 * Load Plugin textdomain.
+	 * Load the plugin text domain for translation.
 	 *
-	 * @return void.
+	 * @return void
 	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'gistgs', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	public function load_plugin_textdomain() {
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'gist-github-shortcode' );
+
+		load_textdomain( 'gist-github-shortcode', trailingslashit( WP_LANG_DIR ) . 'gist-github-shortcode/gist-github-shortcode-' . $locale . '.mo' );
+		load_plugin_textdomain( 'gist-github-shortcode', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
