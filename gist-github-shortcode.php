@@ -87,15 +87,17 @@ class Gist_Github_Shortcode {
 	 * @return string       Gist code.
 	 */
 	function shortcode( $atts ) {
-		extract( shortcode_atts( array(
-			'id' => '',
+		$args = shortcode_atts( array(
+			'id'   => '',
 			'file' => '',
 		), $atts ) );
 
+		$file = $args['file'] ? '?file=' . esc_attr( $args['file'] ) : '';
+
 		$gist = sprintf(
 			'<script src="https://gist.github.com/%s.js%s"></script>',
-			esc_attr( $id ),
-			$file ? '?file=' . esc_attr( $file ) : ''
+			esc_attr( $args['id'] ),
+			$file
 		);
 
 		return $gist;
