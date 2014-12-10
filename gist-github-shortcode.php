@@ -43,11 +43,9 @@ class Gist_Github_Shortcode {
 		// Register the shortcode.
 		add_shortcode( 'gist', array( $this, 'shortcode' ) );
 
-		// Init the buttons.
-		add_action( 'init', array( $this, 'buttons_init' ) );
-
-		// Register the modal dialog ajax request.
-		add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
+		if ( is_admin() ) {
+			include_once 'includes/class-gist-github-shortcode-admin.php';
+		}
 	}
 
 	/**
@@ -102,50 +100,6 @@ class Gist_Github_Shortcode {
 
 		return $gist;
 	}
-
-	/**
-	 * Add custom buttons in TinyMCE.
-	 */
-	function register_buttons( $buttons ) {
-		array_push( $buttons, '|', 'gist' );
-		return $buttons;
-	}
-
-	/**
-	 * Register button scripts.
-	 */
-	function add_buttons( $plugin_array ) {
-		$plugin_array['gist'] = plugins_url( 'tinymce/gist.js' , __FILE__ );
-		return $plugin_array;
-	}
-
-	/**
-	 * Register buttons in init.
-	 */
-	function buttons_init() {
-		if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
-			return;
-		}
-
-		if ( true == get_user_option( 'rich_editing') ) {
-			add_filter( 'mce_external_plugins', array( $this, 'add_buttons' ) );
-			add_filter( 'mce_buttons', array( $this, 'register_buttons' ) );
-		}
-	}
-
-	/**
-	 * Displays the shortcode modal dialog.
-	 *
-	 * @return string  Modal Dialog HTML.
-	 */
-	function dialog() {
-		@ob_clean();
-
-		include plugin_dir_path( __FILE__ ) . 'tinymce/dialog.php';
-
-		die();
-	}
-
 }
 
 add_action( 'plugins_loaded', array( 'Gist_Github_Shortcode', 'get_instance' ), 0 );
