@@ -22,62 +22,62 @@ msgstr ""
 
 #. translators: plugin header field 'Name'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Gist GitHub Shortcode"
 msgstr "Gist GitHub Shortcode"
 
 #. translators: plugin header field 'PluginURI'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "https://github.com/claudiosmweb/gist-github-shortcode"
 msgstr "https://github.com/claudiosmweb/gist-github-shortcode"
 
 #. translators: plugin header field 'Description'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Adds Github Gists in your posts via shortcode."
 msgstr "Adicione Gists do GitHub em seus posts utilizando shortcode."
 
 #. translators: plugin header field 'Author'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Claudio Sanches"
 msgstr "Claudio Sanches"
 
 #. translators: plugin header field 'AuthorURI'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "http://claudiosmweb.com/"
 msgstr "http://claudiosmweb.com/"
 
 #: tinymce/dialog.php:5
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Add Gist"
 msgstr "Adicionar Gist"
 
 #: tinymce/dialog.php:49
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Required Field!"
 msgstr "Campo Obrigatório!"
 
 #: tinymce/dialog.php:61
-#@ gistgs
+#@ gist-github-shortcode
 msgid "ID"
 msgstr "ID"
 
 #: tinymce/dialog.php:65
-#@ gistgs
+#@ gist-github-shortcode
 msgid "File"
 msgstr "Arquivo"
 
 #. translators: plugin header field 'Version'
 #: gist-github-shortcode.php:0
-#@ gistgs
+#@ gist-github-shortcode
 msgid "1.2.0"
 msgstr "1.2.0"
 
 #: tinymce/dialog.php:69
-#@ gistgs
+#@ gist-github-shortcode
 msgid "Insert"
 msgstr "Inserir"
 
