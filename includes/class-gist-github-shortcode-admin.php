@@ -8,42 +8,56 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Gist_Github_Shortcode_Admin {
 
+	/**
+	 * Admin actions.
+	 */
 	public function __construct() {
-		// Init the buttons.
-		add_action( 'init', array( $this, 'buttons_init' ) );
+		add_action( 'admin_head', array( $this, 'add_shortcode_button' ) );
 
 		// Register the modal dialog ajax request.
 		add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
 	}
 
 	/**
-	 * Add custom buttons in TinyMCE.
+	 * Add a button for shortcodes to the WP editor.
 	 */
-	function register_buttons( $buttons ) {
-		array_push( $buttons, '|', 'gist' );
-		return $buttons;
-	}
-
-	/**
-	 * Register button scripts.
-	 */
-	function add_buttons( $plugin_array ) {
-		$plugin_array['gist'] = plugins_url( 'tinymce/gist.js' , __FILE__ );
-		return $plugin_array;
-	}
-
-	/**
-	 * Register buttons in init.
-	 */
-	function buttons_init() {
+	public function add_shortcode_button() {
 		if ( ! current_user_can( 'edit_posts' ) && ! current_user_can( 'edit_pages' ) ) {
 			return;
 		}
 
-		if ( true == get_user_option( 'rich_editing') ) {
-			add_filter( 'mce_external_plugins', array( $this, 'add_buttons' ) );
-			add_filter( 'mce_buttons', array( $this, 'register_buttons' ) );
+		if ( 'true' == get_user_option( 'rich_editing' ) ) {
+			add_filter( 'mce_external_plugins', array( $this, 'add_shortcode_tinymce_plugin' ) );
+			add_filter( 'mce_buttons', array( $this, 'register_shortcode_button' ) );
 		}
+	}
+
+	/**
+	 * Add the shortcode button to TinyMCE.
+	 *
+	 * @param  array $plugins TinyMCE plugins.
+	 *
+	 * @return array
+	 */
+	public function add_shortcode_tinymce_plugin( $plugins ) {
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+		$plugins['gist'] = plugins_url( 'assets/js/gist' . $suffix . '.js', plugin_dir_path( __FILE__ ) );
+
+		return $plugins;
+	}
+
+	/**
+	 * Register the shortcode button.
+	 *
+	 * @param  array $buttons
+	 *
+	 * @return array
+	 */
+	public function register_shortcode_button( $buttons ) {
+		array_push( $buttons, '|', 'gist' );
+
+		return $buttons;
 	}
 
 	/**
