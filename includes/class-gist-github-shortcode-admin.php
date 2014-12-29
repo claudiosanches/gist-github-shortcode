@@ -13,9 +13,6 @@ class Gist_Github_Shortcode_Admin {
 	 */
 	public function __construct() {
 		add_action( 'admin_head', array( $this, 'add_shortcode_button' ) );
-
-		// Register the modal dialog ajax request.
-		add_action( 'wp_ajax_github_gist_shortcode', array( $this, 'dialog' ) );
 	}
 
 	/**
@@ -58,19 +55,6 @@ class Gist_Github_Shortcode_Admin {
 		array_push( $buttons, '|', 'gist' );
 
 		return $buttons;
-	}
-
-	/**
-	 * Displays the shortcode modal dialog.
-	 *
-	 * @return string  Modal Dialog HTML.
-	 */
-	function dialog() {
-		@ob_clean();
-
-		include plugin_dir_path( __FILE__ ) . 'tinymce/dialog.php';
-
-		die();
 	}
 }
 
