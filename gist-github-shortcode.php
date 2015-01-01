@@ -3,7 +3,7 @@
  * Plugin Name: Gist GitHub Shortcode
  * Plugin URI: https://github.com/claudiosmweb/gist-github-shortcode
  * Description: Adds Github Gists in your posts via shortcode.
- * Version: 1.3.0
+ * Version: 1.4.0
  * Author: Claudio Sanches
  * Author URI: http://claudiosmweb.com/
  * License: GPLv2 or later
@@ -24,7 +24,7 @@ class Gist_Github_Shortcode {
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.4.0';
 
 	/**
 	 * Instance of this class.
