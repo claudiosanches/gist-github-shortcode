@@ -13,6 +13,7 @@ class Gist_Github_Shortcode_Admin {
 	 */
 	public function __construct() {
 		add_action( 'admin_head', array( $this, 'add_shortcode_button' ) );
+		add_filter( 'mce_external_languages', array( $this, 'add_tinymce_locales' ), 20, 1 );
 	}
 
 	/**
@@ -55,6 +56,19 @@ class Gist_Github_Shortcode_Admin {
 		array_push( $buttons, '|', 'gist' );
 
 		return $buttons;
+	}
+
+	/**
+	 * TinyMCE locales function.
+	 *
+	 * @param  array $locales TinyMCE locales.
+	 *
+	 * @return array
+	 */
+	public function add_tinymce_locales( $locales ) {
+		$locales['gist'] = plugin_dir_path( __FILE__ ) . 'i18n.php';
+
+		return $locales;
 	}
 }
 
